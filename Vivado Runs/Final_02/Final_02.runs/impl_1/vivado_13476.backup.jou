@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Tue Apr 22 00:26:53 2025
+# Process ID         : 13476
+# Current directory  : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Final_02/Final_02.runs/impl_1
+# Command line       : vivado.exe -log top_stopwatch.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_stopwatch.tcl -notrace
+# Log file           : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Final_02/Final_02.runs/impl_1/top_stopwatch.vdi
+# Journal file       : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Final_02/Final_02.runs/impl_1\vivado.jou
+# Running On         : DESKTOP-HOAF42Q
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : AMD Ryzen 5 3600 6-Core Processor              
+# CPU Frequency      : 3600 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 34282 MB
+# Swap memory        : 5100 MB
+# Total Virtual      : 39382 MB
+# Available Virtual  : 20124 MB
+#-----------------------------------------------------------
+source top_stopwatch.tcl -notrace
