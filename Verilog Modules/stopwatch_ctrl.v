@@ -10,14 +10,14 @@ module stopwatch_ctrl(
   output wire clear_pulse
 );
 
-
   assign clear_pulse = clear_btn & ~running;
-
 
   reg mode_down;
   always @(posedge clk or posedge rst) begin
-    if (rst)              mode_down <= 0;
-    else if (!running && count_down) mode_down <= 1;
+    if (rst)                
+      mode_down <= 0;
+    else if (!running && count_down)
+      mode_down <= ~mode_down;
   end
 
   always @(posedge clk or posedge rst) begin
