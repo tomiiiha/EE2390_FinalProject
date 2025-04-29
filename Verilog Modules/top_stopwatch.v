@@ -50,6 +50,8 @@ module top_stopwatch (
 );
 
   wire [3:0] d_min, d_st, d_su, d_ten;
+
+  
   stopwatch u_sw (
     .clk         (CLK100MHZ),
     .rst         (~rstn_int),    // active‑high reset
