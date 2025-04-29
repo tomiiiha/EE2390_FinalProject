@@ -8,10 +8,12 @@ module stopwatch(
     output wire [3:0] digit_min,
     output wire [3:0] digit_st,
     output wire [3:0] digit_su,
-    output wire [3:0] digit_tenths
+    output wire [3:0] digit_tenths,
+    output wire       running,     // Add running signal output
+    output wire       dir          // Add direction signal output
 );
 
-  // 100 ms tick generator
+  // 100 ms tick generator
   wire tick_100ms;
   clk_divider_100ms u_div (
     .clk(clk),
@@ -20,7 +22,7 @@ module stopwatch(
   );
 
   // control FSM: running, direction, clear pulse
-  wire run, dir, clr_pulse;
+  wire clr_pulse;
   stopwatch_ctrl u_ctrl (
     .clk        (clk),
     .rst        (rst),
@@ -28,13 +30,13 @@ module stopwatch(
     .stop_btn   (stop_btn),
     .clear_btn  (clear_btn),
     .count_down (count_down),
-    .running    (run),
-    .dir        (dir),
+    .running    (running),    // Connect to output
+    .dir        (dir),       // Connect to output
     .clear_pulse(clr_pulse)
   );
 
-  // gate the tick so counters only advance when “run” is high
-  wire en_cnt = run & tick_100ms;
+  // gate the tick so counters only advance when "run" is high
+  wire en_cnt = running & tick_100ms;
 
   // tenths digit (0–9)
   wire roll1;
@@ -80,7 +82,7 @@ module stopwatch(
     .en   (roll3),
     .dir  (dir),
     .count(digit_min),
-    .roll ()        // we don’t cascade past minutes
+    .roll ()        // we don't cascade past minutes
   );
 
 endmodule
