@@ -1,16 +1,16 @@
 module stopwatch(
-    input  wire       clock, // 100 MHz clock input
-    input  wire       reset, // active‑high reset
-    input  wire       start_button, // start button
-    input  wire       stop_button, // stop button
-    input  wire       clear_button, // clear button
-    input  wire       count_down, // count down mode
-    output wire [3:0] digit_minute, // minutes (0–9)
-    output wire [3:0] digit_sec_tens, // seconds tens (0–5)
+    input  wire       clock,           // 100 MHz clock input
+    input  wire       reset,           // active‑high reset
+    input  wire       start_button,    // start button
+    input  wire       stop_button,     // stop button
+    input  wire       clear_button,    // clear button
+    input  wire       count_down,      // count down mode
+    output wire [3:0] digit_minute,    // minutes (0–9)
+    output wire [3:0] digit_sec_tens,  // seconds tens (0–5)
     output wire [3:0] digit_sec_units, // seconds units (0–9)
-    output wire [3:0] digit_tenths, // tenths (0–9)
-    output wire       running, // running flag
-    output wire       direction // direction flag (1 for up, 0 for down)
+    output wire [3:0] digit_tenths,    // tenths (0–9)
+    output wire       running,         // running flag
+    output wire       direction        // direction flag (1 for up, 0 for down)
 );
 
   // 100 ms tick generator
@@ -29,6 +29,7 @@ module stopwatch(
                   
   // control FSM: running, direction, clear pulse
   wire run, dir, clr_pulse;
+
   stopwatch_ctrl u_ctrl (
     .clock         (clock),
     .reset         (reset),
@@ -47,6 +48,7 @@ module stopwatch(
 
   // tenths digit (0–9)
   wire carry_out_tenths;
+
   bcd_counter #(.MAX(9)) u_tenths (
     .clock      (clock),
     .reset      (reset),
@@ -59,6 +61,7 @@ module stopwatch(
 
   // seconds‑units (0–9)
   wire carry_out_ones;
+
   bcd_counter #(.MAX(9)) u_su (
     .clock      (clock),
     .reset      (reset),
@@ -71,6 +74,7 @@ module stopwatch(
 
   // seconds‑tens (0–5)
   wire carry_out_minutes;
+  
   bcd_counter #(.MAX(5)) u_st (
     .clock      (clock),
     .reset      (reset),

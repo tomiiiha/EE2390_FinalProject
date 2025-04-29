@@ -1,0 +1,56 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Tue Apr 29 12:27:42 2025
+# Process ID         : 9360
+# Current directory  : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Run_03/Run_03.runs/synth_1
+# Command line       : vivado.exe -log top_stopwatch.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_stopwatch.tcl
+# Log file           : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Run_03/Run_03.runs/synth_1/top_stopwatch.vds
+# Journal file       : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Run_03/Run_03.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-HOAF42Q
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 19045
+# Processor Detail   : AMD Ryzen 5 3600 6-Core Processor              
+# CPU Frequency      : 3600 MHz
+# CPU Physical cores : 6
+# CPU Logical cores  : 12
+# Host memory        : 34282 MB
+# Swap memory        : 5100 MB
+# Total Virtual      : 39382 MB
+# Available Virtual  : 21554 MB
+#-----------------------------------------------------------
+source top_stopwatch.tcl -notrace
+Command: synth_design -top top_stopwatch -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 18084
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1023.141 ; gain = 467.223
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'clear_pulse', assumed default net type 'wire' [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch.v:55]
+INFO: [Synth 8-11241] undeclared symbol 'enable_count', assumed default net type 'wire' [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch.v:56]
+INFO: [Synth 8-11241] undeclared symbol 'dun', assumed default net type 'wire' [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/top_stopwatch.v:82]
+INFO: [Synth 8-6157] synthesizing module 'top_stopwatch' [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/top_stopwatch.v:1]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/top_stopwatch.v:20]
+INFO: [Synth 8-6157] synthesizing module 'power_on_reset' [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/power_on_reset.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'power_on_reset' (0#1) [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/power_on_reset.v:2]
+ERROR: [Synth 8-11365] for the instance 'u_power_on_reset' of module 'power_on_reset' declared at 'C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/power_on_reset.v:2', named port connection 'clk' does not exist [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/top_stopwatch.v:21]
+ERROR: [Synth 8-11365] for the instance 'u_power_on_reset' of module 'power_on_reset' declared at 'C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/power_on_reset.v:2', named port connection 'rst_n' does not exist [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/top_stopwatch.v:22]
+INFO: [Synth 8-6157] synthesizing module 'button_proc' [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/button_proc.v:1]
+ERROR: [Synth 8-6156] failed synthesizing module 'button_proc' [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/button_proc.v:1]
+ERROR: [Synth 8-6156] failed synthesizing module 'top_stopwatch' [C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/top_stopwatch.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1128.156 ; gain = 572.238
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+13 Infos, 1 Warnings, 0 Critical Warnings and 5 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 29 12:27:57 2025...

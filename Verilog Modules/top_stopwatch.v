@@ -16,13 +16,13 @@ module top_stopwatch (
   wire[6:0] seg_mux;
   wire dp_mux;
 
-  wire por_rstn;
-  por u_por (
+  wire power_on_reset_reset_n;
+  power_on_reset u_power_on_reset (
     .clk   (CLOCK100MHZ),
-    .rst_n (por_rstn)
+    .rst_n (power_on_reset_reset_n)
   );
 
-  wire rstn_int = por_rstn;
+  wire reset_n_int = power_on_reset_reset_n;
 
 
   wire start_p, stop_p, clear_p, cd_p;
@@ -30,30 +30,30 @@ module top_stopwatch (
 //Buttons
 //--------------------------------------------------------------
   button_proc u_btn_start ( 
-    .clock(CLOCK100MHZ), 
-    .reset_n(reset_n_int), 
-    .button_input(BUTTON0), 
-    .button_pulse(start_p) 
+    .clock           (CLOCK100MHZ), 
+    .reset_n        (reset_n_int), 
+    .button_input     (BUTTON0), 
+    .button_pulse    (start_p) 
 );
 
   button_proc u_btn_stop  ( 
-    .clock(CLOCK100MHZ), 
-    .reset_n(rstn_int), 
-    .button_input(BUTTON1), 
-    .button_pulse(stop_p)  
+    .clock           (CLOCK100MHZ), 
+    .reset_n         (reset_n_int), 
+    .button_input    (BUTTON1), 
+    .button_pulse    (stop_p)  
 );
 
   button_proc u_btn_clear ( 
-    .clk(CLOCK100MHZ), 
-    .reset_n(rstn_int), 
-    .button_input(BUTTON2), 
-    .button_pulse(clear_p) 
+    .clock           (CLOCK100MHZ), 
+    .reset_n         (reset_n_int), 
+    .button_input    (BUTTON2), 
+    .button_pulse    (clear_p) 
 );
   button_proc u_btn_cd    ( 
-    .clk(CLOCK100MHZ), 
-    .reset_n(rstn_int), 
-    .button_input(BUTTON3), 
-    .button_pulse(cd_p)
+    .clock           (CLOCK100MHZ), 
+    .reset_n         (reset_n_int), 
+    .button_input    (BUTTON3), 
+    .button_pulse    (cd_p)
 );
 //--------------------------------------------------------------
 
@@ -62,7 +62,7 @@ module top_stopwatch (
 
   stopwatch u_sw (
     .clock             (CLOCK100MHZ),
-    .reset             (~rstn_int),    // active‑high reset
+    .reset             (~reset_n_int),    // active‑high reset
     .start_button      (start_p),
     .stop_button       (stop_p),
     .clear_button      (clear_p),
@@ -77,7 +77,7 @@ module top_stopwatch (
 
   stopwatch_flash u_flashgen(
     .clock              (CLOCK100MHZ),
-    .reset_n            (rstn_int),
+    .reset_n            (reset_n_int),
     .count_up_enable    (run & dir),
     .count_down_enable  (dun & ~dir),
     .minute             (d_min),
@@ -103,14 +103,17 @@ module top_stopwatch (
     .hex(d_ten),
     .Seg(seg0)
   );
+
   sevenseghexdecoder dec1(
     .hex(d_su), 
     .Seg(seg1)
   );
+
   sevenseghexdecoder dec2(
     .hex(d_st),  
     .Seg(seg2)
   );
+  
   sevenseghexdecoder dec3(
     .hex(d_min), 
     .Seg(seg3)
@@ -119,7 +122,7 @@ module top_stopwatch (
 
   display_mux u_mux (
     .clock        (CLOCK100MHZ),
-    .reset_n      (rstn_int),
+    .reset_n      (reset_n_int),
     .hex3         (d_min),
     .hex2         (d_st),
     .hex1         (d_su),

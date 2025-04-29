@@ -1,20 +1,20 @@
 module bcd_counter #(
-  parameter MAX = 9
+  parameter MAX = 9 //Maximum value for BCD counter (0-9)
 )(
-  input  wire       clock, //Clock signal
-  input  wire       reset, //Reset signal
-  input  wire       clear, //Clear signal
-  input  wire       enable, //Enable signal
-  input  wire       direction, //Direction signal (1 for up, 0 for down)
-  output reg[3:0]   count, //4-bit count output
-  output reg        carry_out //Carry out signal (1 if count rolls over)
+  input  wire       clock,      //Clock signal
+  input  wire       reset,      //Reset signal
+  input  wire       clear,      //Clear signal
+  input  wire       enable,     //Enable signal
+  input  wire       direction,  //Direction signal (1 for up, 0 for down)
+  output reg[3:0]   count,      //4-bit count output
+  output reg        carry_out   //Carry out signal (1 if count rolls over)
 );
 
     always @(posedge clock) begin //On clock edge
 
         if (reset | clear) begin //Reset or clear the counter
 
-            count <= 0; //Reset count to 0
+            count <= 0;      //Reset count to 0
             carry_out  <= 0; //Reset carry out signal
 
         end else if (enable) begin //Enable counting
