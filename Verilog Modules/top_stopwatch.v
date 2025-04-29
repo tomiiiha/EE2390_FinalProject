@@ -9,7 +9,17 @@ module top_stopwatch (
   output wire[6:0]  SEG,
   output wire       DECIMAL_P
 
+  //debugging
+  //output wire       LED0,
+  //output wire       LED1,
+  //output wire       LED2,
+  //output wire       LED3,
 );
+
+  //assign LED0 = start_p;
+  //assign LED1 = stop_p;
+  //assign LED2 = clear_p;
+  //assign LED3 = cd_p;
 
   wire blink;
   wire[3:0] an_mux;
@@ -18,8 +28,8 @@ module top_stopwatch (
 
   wire power_on_reset_reset_n;
   power_on_reset u_power_on_reset (
-    .clk   (CLOCK100MHZ),
-    .rst_n (power_on_reset_reset_n)
+    .clock   (CLOCK100MHZ),
+    .reset_n (power_on_reset_reset_n)
   );
 
   wire reset_n_int = power_on_reset_reset_n;
@@ -31,8 +41,8 @@ module top_stopwatch (
 //--------------------------------------------------------------
   button_proc u_btn_start ( 
     .clock           (CLOCK100MHZ), 
-    .reset_n        (reset_n_int), 
-    .button_input     (BUTTON0), 
+    .reset_n         (reset_n_int), 
+    .button_input    (BUTTON0), 
     .button_pulse    (start_p) 
 );
 
@@ -79,7 +89,7 @@ module top_stopwatch (
     .clock              (CLOCK100MHZ),
     .reset_n            (reset_n_int),
     .count_up_enable    (run & dir),
-    .count_down_enable  (dun & ~dir),
+    .count_down_enable  (run & ~dir),
     .minute             (d_min),
     .sec_tens           (d_st),
     .sec_units          (d_su),

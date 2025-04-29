@@ -56,6 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -96,6 +98,8 @@ read_xdc {{C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Pr
 set_property used_in_implementation false [get_files {{C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Constraints/Basys3_FinalProject.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Run_03/Run_03.srcs/utils_1/imports/synth_1/top_stopwatch.dcp}
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="9868" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="18068" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="20212" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="2660" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="13088" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="6044" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="14456" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="13564" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="20976" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="20468" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="16892" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="tomih" Host="DESKTOP-HOAF42Q" Pid="21084" HostCore="12" HostMemory="034282377216">
+    </Process>
+</ProcessHandle>

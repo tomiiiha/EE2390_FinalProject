@@ -10,9 +10,9 @@
 ## - rename the used ports (in each line, after get_ports) according to the top level signal names in the project
 
 ## Clock signal (JCH This is for the 100 MHz clock on-board the Basys3, won't use this in Lab #08, see button below).
-set_property PACKAGE_PIN W5 [get_ports CLK100MHZ]							
-	set_property IOSTANDARD LVCMOS33 [get_ports CLK100MHZ]
-	create_clock -add -name sys_clk_pin -period 10.000 -waveform {0 5} [get_ports CLK100MHZ]
+set_property PACKAGE_PIN W5 [get_ports CLOCK100MHZ]							
+	set_property IOSTANDARD LVCMOS33 [get_ports CLOCK100MHZ]
+	create_clock -add -name sys_clk_pin -period 10.000 -waveform {0 5} [get_ports CLOCK100MHZ]
  
 ## Switches  JCH Provide A inputs at rightmost two switches
 #set_property PACKAGE_PIN V17 [get_ports {A[0]}]					
@@ -50,14 +50,14 @@ set_property PACKAGE_PIN W5 [get_ports CLK100MHZ]
  
 
 ## LEDs  JCH Provide initial Y output on rightmost LED
-#set_property PACKAGE_PIN U16 [get_ports {Y}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {Y}]
-#set_property PACKAGE_PIN E19 [get_ports {led[1]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {led[1]}]
-#set_property PACKAGE_PIN U19 [get_ports {led[2]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {led[2]}]
-#set_property PACKAGE_PIN V19 [get_ports {led[3]}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {led[3]}]
+#set_property PACKAGE_PIN U16 [get_ports {LED0}]					
+	#set_property IOSTANDARD LVCMOS33 [get_ports {LED0}]
+#set_property PACKAGE_PIN E19 [get_ports {LED1}]					
+	#set_property IOSTANDARD LVCMOS33 [get_ports {LED1}]
+#set_property PACKAGE_PIN U19 [get_ports {LED2}]					
+	#set_property IOSTANDARD LVCMOS33 [get_ports {LED2}]
+#set_property PACKAGE_PIN V19 [get_ports {LED3}]					
+	#set_property IOSTANDARD LVCMOS33 [get_ports {LED3}]
 #set_property PACKAGE_PIN W18 [get_ports {led[4]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {led[4]}]
 #set_property PACKAGE_PIN U15 [get_ports {led[5]}]					
@@ -100,17 +100,17 @@ set_property PACKAGE_PIN V5 [get_ports {SEG[5]}]
 set_property PACKAGE_PIN U7 [get_ports {SEG[6]}]					
 	set_property IOSTANDARD LVCMOS33 [get_ports {SEG[6]}]
 
-set_property PACKAGE_PIN V7 [get_ports DP]							
-	set_property IOSTANDARD LVCMOS33 [get_ports DP]
+set_property PACKAGE_PIN V7 [get_ports DECIMAL_P]							
+	set_property IOSTANDARD LVCMOS33 [get_ports DECIMAL_P]
 
-set_property PACKAGE_PIN U2 [get_ports {AN[0]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {AN[0]}]
-set_property PACKAGE_PIN U4 [get_ports {AN[1]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {AN[1]}]
-set_property PACKAGE_PIN V4 [get_ports {AN[2]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {AN[2]}]
-set_property PACKAGE_PIN W4 [get_ports {AN[3]}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {AN[3]}]
+set_property PACKAGE_PIN U2 [get_ports {ANODE[0]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {ANODE[0]}]
+set_property PACKAGE_PIN U4 [get_ports {ANODE[1]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {ANODE[1]}]
+set_property PACKAGE_PIN V4 [get_ports {ANODE[2]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {ANODE[2]}]
+set_property PACKAGE_PIN W4 [get_ports {ANODE[3]}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {ANODE[3]}]
 
 
 ##Buttons  JCH Provide initial clk on center pushbutton
@@ -122,14 +122,14 @@ set_property PACKAGE_PIN W4 [get_ports {AN[3]}]
 set_property CFGBVS VCCO [current_design]
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 
-set_property PACKAGE_PIN T18 [get_ports BTN0]						
-	set_property IOSTANDARD LVCMOS33 [get_ports BTN0]
-set_property PACKAGE_PIN W19 [get_ports BTN1]						
-	set_property IOSTANDARD LVCMOS33 [get_ports BTN1]
-set_property PACKAGE_PIN T17 [get_ports BTN2]						
-	set_property IOSTANDARD LVCMOS33 [get_ports BTN2]
-set_property PACKAGE_PIN U17 [get_ports BTN3]						
-	set_property IOSTANDARD LVCMOS33 [get_ports BTN3]
+set_property PACKAGE_PIN T18 [get_ports {BUTTON0}]  
+  set_property IOSTANDARD LVCMOS33 [get_ports {BUTTON0}]
+set_property PACKAGE_PIN W19 [get_ports {BUTTON1}]  
+  set_property IOSTANDARD LVCMOS33 [get_ports {BUTTON1}]
+set_property PACKAGE_PIN T17 [get_ports {BUTTON2}]  
+  set_property IOSTANDARD LVCMOS33 [get_ports {BUTTON2}]
+set_property PACKAGE_PIN U17 [get_ports {BUTTON3}]
+  set_property IOSTANDARD LVCMOS33 [get_ports {BUTTON3}]
  
 
 

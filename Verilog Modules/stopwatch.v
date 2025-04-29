@@ -28,7 +28,7 @@ module stopwatch(
 
                   
   // control FSM: running, direction, clear pulse
-  wire run, dir, clr_pulse;
+  wire run, dir, clear_pulse;
 
   stopwatch_ctrl u_ctrl (
     .clock         (clock),
@@ -39,12 +39,12 @@ module stopwatch(
     .count_down    (count_down),
     .running       (run),
     .direction     (direction),
-    .clear_pulse   (clr_pulse),
+    .clear_pulse   (clear_pulse),
     .at_zero       (at_zero)
   );
 
   // gate the tick so counters only advance when “run” is high and we’re not at zero
-  wire en_count = run & tick_100ms & ~at_zero;
+  wire enable_count = run & tick_100ms & ~at_zero;
 
   // tenths digit (0–9)
   wire carry_out_tenths;

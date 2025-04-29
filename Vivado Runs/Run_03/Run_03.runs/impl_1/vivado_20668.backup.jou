@@ -3,12 +3,12 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Tue Apr 29 13:18:30 2025
-# Process ID         : 3320
-# Current directory  : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Run_03/Run_03.runs/synth_1
-# Command line       : vivado.exe -log top_stopwatch.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_stopwatch.tcl
-# Log file           : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Run_03/Run_03.runs/synth_1/top_stopwatch.vds
-# Journal file       : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Run_03/Run_03.runs/synth_1\vivado.jou
+# Start of session at: Tue Apr 29 12:48:11 2025
+# Process ID         : 20668
+# Current directory  : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Run_03/Run_03.runs/impl_1
+# Command line       : vivado.exe -log top_stopwatch.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_stopwatch.tcl -notrace
+# Log file           : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Run_03/Run_03.runs/impl_1/top_stopwatch.vdi
+# Journal file       : C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Run_03/Run_03.runs/impl_1\vivado.jou
 # Running On         : DESKTOP-HOAF42Q
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 19045
@@ -19,6 +19,6 @@
 # Host memory        : 34282 MB
 # Swap memory        : 5100 MB
 # Total Virtual      : 39382 MB
-# Available Virtual  : 22250 MB
+# Available Virtual  : 22346 MB
 #-----------------------------------------------------------
 source top_stopwatch.tcl -notrace
