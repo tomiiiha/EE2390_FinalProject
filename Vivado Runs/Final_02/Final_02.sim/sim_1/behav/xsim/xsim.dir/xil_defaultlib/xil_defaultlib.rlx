@@ -1,0 +1,16 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:57
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/bcd_counter.v,1745943988,verilog,,C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/button_proc.v,,bcd_counter,,,,,,,,
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/button_proc.v,1745301106,verilog,,C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/clk_divider_100ms.v,,button_proc,,,,,,,,
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/clk_divider_100ms.v,1745301111,verilog,,C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/display_flash.v,,clk_divider_100ms,,,,,,,,
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/display_flash.v,1745943989,verilog,,C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/display_mux.v,,display_flash,,,,,,,,
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/display_mux.v,1745304259,verilog,,C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/por.v,,display_mux,,,,,,,,
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/por.v,1745301587,verilog,,C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/sevenseghexdecoder.v,,por,,,,,,,,
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/sevenseghexdecoder.v,1745301109,verilog,,C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch.v,,sevenseghexdecoder,,,,,,,,
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch.v,1745304260,verilog,,C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch_ctrl.v,,stopwatch,,,,,,,,
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch_ctrl.v,1745304549,verilog,,C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch_flash.v,,stopwatch_ctrl,,,,,,,,
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch_flash.v,1745943989,verilog,,C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/top_stopwatch.v,,stopwatch_flash,,,,,,,,
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/top_stopwatch.v,1745943990,verilog,,,,top_stopwatch,,,,,,,,
+C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Final_02/Final_02.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,,,,,,,

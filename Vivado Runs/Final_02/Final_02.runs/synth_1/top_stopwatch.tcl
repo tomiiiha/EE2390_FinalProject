@@ -56,6 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 3
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -74,11 +76,13 @@ read_verilog -library xil_defaultlib {
   {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/bcd_counter.v}
   {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/button_proc.v}
   {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/clk_divider_100ms.v}
+  {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/display_flash.v}
   {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/display_mux.v}
   {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/por.v}
   {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/sevenseghexdecoder.v}
   {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch.v}
   {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch_ctrl.v}
+  {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch_flash.v}
   {C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/top_stopwatch.v}
 }
 OPTRACE "Adding files" END { }

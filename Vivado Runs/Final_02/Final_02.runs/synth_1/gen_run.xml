@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1745304615" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_stopwatch.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1745946067" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_stopwatch.dcp">
   <File Type="PA-TCL" Name="top_stopwatch.tcl"/>
   <File Type="REPORTS-TCL" Name="top_stopwatch_reports.tcl"/>
   <File Type="RDS-RDS" Name="top_stopwatch.vds"/>
@@ -26,6 +26,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../Verilog Modules/clk_divider_100ms.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../Verilog Modules/display_flash.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -61,6 +68,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../Verilog Modules/stopwatch_ctrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../Verilog Modules/stopwatch_flash.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

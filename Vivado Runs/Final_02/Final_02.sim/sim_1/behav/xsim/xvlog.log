@@ -1,0 +1,24 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/bcd_counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bcd_counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/button_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module button_proc
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/clk_divider_100ms.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_divider_100ms
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/display_flash.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module display_flash
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/display_mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module display_mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/por.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module por
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/sevenseghexdecoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sevenseghexdecoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module stopwatch
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch_ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module stopwatch_ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/stopwatch_flash.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module stopwatch_flash
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Verilog Modules/top_stopwatch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_stopwatch
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Final_02/Final_02.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

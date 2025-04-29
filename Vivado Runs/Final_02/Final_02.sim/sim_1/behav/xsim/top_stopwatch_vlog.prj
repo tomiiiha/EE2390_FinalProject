@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../Verilog Modules/bcd_counter.v" \
+"../../../../../../Verilog Modules/button_proc.v" \
+"../../../../../../Verilog Modules/clk_divider_100ms.v" \
+"../../../../../../Verilog Modules/display_flash.v" \
+"../../../../../../Verilog Modules/display_mux.v" \
+"../../../../../../Verilog Modules/por.v" \
+"../../../../../../Verilog Modules/sevenseghexdecoder.v" \
+"../../../../../../Verilog Modules/stopwatch.v" \
+"../../../../../../Verilog Modules/stopwatch_ctrl.v" \
+"../../../../../../Verilog Modules/stopwatch_flash.v" \
+"../../../../../../Verilog Modules/top_stopwatch.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

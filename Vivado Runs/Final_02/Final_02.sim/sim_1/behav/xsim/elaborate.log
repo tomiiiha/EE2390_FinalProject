@@ -1,0 +1,26 @@
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot top_stopwatch_behav xil_defaultlib.top_stopwatch xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Final_02/Final_02.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/tomih/Desktop/EE2390 Digital System Design Projects/Final_Project/Vivado Runs/Final_02/Final_02.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.por
+Compiling module xil_defaultlib.button_proc
+Compiling module xil_defaultlib.clk_divider_100ms
+Compiling module xil_defaultlib.stopwatch_ctrl
+Compiling module xil_defaultlib.bcd_counter
+Compiling module xil_defaultlib.stopwatch
+Compiling module xil_defaultlib.stopwatch_flash
+Compiling module xil_defaultlib.display_flash
+Compiling module xil_defaultlib.sevenseghexdecoder
+Compiling module xil_defaultlib.display_mux
+Compiling module xil_defaultlib.top_stopwatch
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_stopwatch_behav

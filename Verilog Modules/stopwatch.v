@@ -1,86 +1,95 @@
 module stopwatch(
-    input  wire       clk,
-    input  wire       rst,         // active‑high reset
-    input  wire       start_btn,
-    input  wire       stop_btn,
-    input  wire       clear_btn,
-    input  wire       count_down,
-    output wire [3:0] digit_min,
-    output wire [3:0] digit_st,
-    output wire [3:0] digit_su,
-    output wire [3:0] digit_tenths
+    input  wire       clock, // 100 MHz clock input
+    input  wire       reset, // active‑high reset
+    input  wire       start_button, // start button
+    input  wire       stop_button, // stop button
+    input  wire       clear_button, // clear button
+    input  wire       count_down, // count down mode
+    output wire [3:0] digit_minute, // minutes (0–9)
+    output wire [3:0] digit_sec_tens, // seconds tens (0–5)
+    output wire [3:0] digit_sec_units, // seconds units (0–9)
+    output wire [3:0] digit_tenths, // tenths (0–9)
+    output wire       running, // running flag
+    output wire       direction // direction flag (1 for up, 0 for down)
 );
 
   // 100 ms tick generator
   wire tick_100ms;
   clk_divider_100ms u_div (
-    .clk(clk),
-    .rst(rst),
+    .clock(clock),
+    .reset(reset),
     .tick(tick_100ms)
   );
 
+  wire at_zero = (digit_minute == 0 &&
+                  digit_sec_tens == 0 &&
+                  digit_sec_units == 0 &&
+                  digit_tenths == 0);
+
+                  
   // control FSM: running, direction, clear pulse
   wire run, dir, clr_pulse;
   stopwatch_ctrl u_ctrl (
-    .clk        (clk),
-    .rst        (rst),
-    .start_btn  (start_btn),
-    .stop_btn   (stop_btn),
-    .clear_btn  (clear_btn),
-    .count_down (count_down),
-    .running    (run),
-    .dir        (dir),
-    .clear_pulse(clr_pulse)
+    .clock         (clock),
+    .reset         (reset),
+    .start_button  (start_button),
+    .stop_button   (stop_button),
+    .clear_button  (clear_button),
+    .count_down    (count_down),
+    .running       (run),
+    .direction     (direction),
+    .clear_pulse   (clr_pulse),
+    .at_zero       (at_zero)
   );
 
-  // gate the tick so counters only advance when “run” is high
-  wire en_cnt = run & tick_100ms;
+  // gate the tick so counters only advance when “run” is high and we’re not at zero
+  wire en_count = run & tick_100ms & ~at_zero;
 
   // tenths digit (0–9)
-  wire roll1;
+  wire carry_out_tenths;
   bcd_counter #(.MAX(9)) u_tenths (
-    .clk  (clk),
-    .rst  (rst),
-    .clr  (clr_pulse),
-    .en   (en_cnt),
-    .dir  (dir),
-    .count(digit_tenths),
-    .roll (roll1)
+    .clock      (clock),
+    .reset      (reset),
+    .clear      (clear_pulse),
+    .enable     (enable_count),
+    .direction  (direction),
+    .count      (digit_tenths),
+    .carry_out  (carry_out_tenths)
   );
 
   // seconds‑units (0–9)
-  wire roll2;
+  wire carry_out_ones;
   bcd_counter #(.MAX(9)) u_su (
-    .clk  (clk),
-    .rst  (rst),
-    .clr  (clr_pulse),
-    .en   (roll1),
-    .dir  (dir),
-    .count(digit_su),
-    .roll (roll2)
+    .clock      (clock),
+    .reset      (reset),
+    .clear      (clear_pulse),
+    .enable     (carry_out_tenths),
+    .direction  (direction),
+    .count      (digit_sec_units),
+    .carry_out  (carry_out_ones)
   );
 
   // seconds‑tens (0–5)
-  wire roll3;
+  wire carry_out_minutes;
   bcd_counter #(.MAX(5)) u_st (
-    .clk  (clk),
-    .rst  (rst),
-    .clr  (clr_pulse),
-    .en   (roll2),
-    .dir  (dir),
-    .count(digit_st),
-    .roll (roll3)
+    .clock      (clock),
+    .reset      (reset),
+    .clear      (clear_pulse),
+    .enable     (carry_out_ones),
+    .direction  (direction),
+    .count      (digit_sec_tens),
+    .carry_out  (carry_out_minutes)
   );
 
   // minutes (0–9)
   bcd_counter #(.MAX(9)) u_min (
-    .clk  (clk),
-    .rst  (rst),
-    .clr  (clr_pulse),
-    .en   (roll3),
-    .dir  (dir),
-    .count(digit_min),
-    .roll ()        // we don’t cascade past minutes
+    .clock      (clock),
+    .reset      (reset),
+    .clear      (clear_pulse),
+    .enable     (carry_out_minutes),
+    .direction  (direction),
+    .count      (digit_minute),
+    .carry_out  ()        // we don’t cascade past minutes
   );
 
 endmodule

@@ -1,37 +1,36 @@
 module stopwatch_flash(
-    input wire clk,
-    input wire rst_n,
-    input wire count_up_en,
-    input wire count_down_en,
-    input wire [3:0] min,
-    input wire [3:0] sec_tens,
-    input wire [3:0] sec_units,
-    input wire [3:0] tenth,
-    output reg blink
+    input  wire       clock, // 100 MHz clock input
+    input  wire       reset_n, // Active-low reset
+    input  wire       count_up_enable, // Count up enable signal
+    input  wire       count_down_enable, // Count down enable signal
+    input  wire [3:0] minute, // 4-bit minute value
+    input  wire [3:0] sec_tens, // 4-bit seconds tens value
+    input  wire [3:0] sec_units, // 4-bit seconds units value
+    input  wire [3:0] tenth, // 4-bit tenths value
+    output reg        blink // Blink output signal
 );
+  // only flash if we’re at zero and not actively counting
+  wire at_zero  = (minute==0 && sec_tens==0 && sec_units==0 && tenth==0); 
+  wire running = count_up_enable | count_down_enable;
+  wire flash_enable = at_zero & ~running;
 
-wire running = count_up_en | count_down_en;
-
-wire at_zero = (min == 4'd0 && sec_tens == 4'd0 &&
-                sec_units == 4'd0 && tenth == 4'd0);
-wire flash_enable = running && at_zero;
-
-//blink code
-reg[25:0] div;
-always@(posedge clk or negedge rst_n)begin
-    if(!rst_n)begin
-        div <= 0;
-        blink <= 1;
+  reg [24:0] divider; // 25-bit divider for 100 MHz clock
+  always @(posedge clock or negedge reset_n) begin
+    if (!reset_n) begin // reset the divider and blink signal
+      divider <= 0;
+      blink <= 1;
+    end else if (!flash_enable) begin
+      // not in flash mode: solid on
+      divider   <= 0;
+      blink <= 1;
+    end else begin
+      // in flash mode: toggle every 25 million cycles (~0.25 sec at 100 MHz)
+      if (divider == 25_000_000-1) begin
+        divider   <= 0;
+        blink <= ~blink;
+      end else begin
+        divider <= divider + 1;
+      end
     end
-    else if(flash_enable)begin
-        if(div == 25_000_000 - 1)begin
-            div <= 0;
-            blink <= ~blink;
-        end
-        else begin
-            div <= 0;
-            blink <= 1;
-        end
-    end
-end
-endmodule;
+  end
+endmodule
